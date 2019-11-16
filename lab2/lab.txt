@@ -1,0 +1,16 @@
+1) The program first asks for a physical address from the user.
+2) There is a check whether the entered physical address is greater than 2^32 or not. This is because we have a 32 bit address.
+3) Page size equivalent to 4KBytes which is already given.
+4) In Order to find out the number of pages we divide the physical address by the page size i.e 4096.
+5) In Order to find out starting address of a physical page we implicit convert the multiple of pages and pagesize to hex.
+6) Offset is calculated by multiplying remainder by pagesize.
+
+Characteristic Common:
+	The starting address depends on the number of pages in the program. The starting address is actually hexadecimal conversion of number of pages. 
+	For e.g, if physical address is 19986=>
+			Number of Pages = 4
+			Starting Address = 0x4000
+		 if physical address is 47892932
+			Nummber of Pages = 11692
+			Starting Address = 0x2dac000
+	Also the starting address of each physical address is divisible by 4.
